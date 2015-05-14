@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+	<ui:composition>
+		<f:view>
+			<h1>Group Master</h1>
+			<p:tabView orientation="left">
+				<p:tab title="Create Group">
+					<h:panelGrid columns="2" cellpadding="10">
+						<h:outputText value="Group Name: " />
+						<h:inputText></h:inputText>
+						<h:outputText value="Alias Name: " />
+						<h:inputText></h:inputText>
+						<h:outputText value="Priority: " />
+						<h:inputText></h:inputText>
+						<h:button value="Create"></h:button>
+						<h:button value="Reset"></h:button>
+					</h:panelGrid>
+				</p:tab>
+				<p:tab title="Update Group">
+					<p:dataTable id="groups" 
+						editable="true" style="margin-bottom:20px">
+						<f:facet name="header">
+           					Row Editing
+       					</f:facet>						
+
+						<p:column headerText="Id">
+							
+						</p:column>
+
+						<p:column headerText="Group Name">
+							
+						</p:column>
+
+						<p:column headerText="Alias Name">
+							
+						</p:column>
+						
+						<p:column headerText="Priority">
+							
+						</p:column>
+						
+					</p:dataTable>
+
+				</p:tab>
+
+			</p:tabView>
+		</f:view>
+	</ui:composition>
+</body>
+</html>

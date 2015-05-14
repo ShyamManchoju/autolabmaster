@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+
+</head>
+<body>
+	<ui:composition>
+		<div>
+			<h:form>
+				<p:growl id="messages" />
+
+				<p:menubar>
+					<p:submenu label="Principle" rendered="#{not empty username}">
+						<p:menuitem value="Group Master"  url="/template/layout/groupMasterLayout.xhtml" />						
+						<p:menuitem value="Department Master" url="/template/layout/departmentMasterLayout.xhtml" />						
+						<p:menuitem value="Sample Master"  url="#" />						
+						<p:menuitem value="Test Method Master"  url="#" />						
+						<p:menuitem value="Notes Master" icon="ui-icon-pencil" url="#" />						
+						<p:menuitem value="Antibiotics Master"  url="#" />
+						<p:menuitem value="Footer Master"  url="#" />
+						<p:separator />
+						<p:menuitem value="Consulting Doctors Master"  url="#" />
+						<p:menuitem value="Specialization Master"  url="#" />
+						<p:menuitem value="Member Master"  url="#" />
+						<p:separator />
+						<p:menuitem value="DHL Master"  url="#" />
+						<p:menuitem value="Doctor Master"  url="#" />
+						<p:menuitem value="Corporate Master"  url="#" />
+						<p:menuitem value="OutSource Lab Master"  url="#" />
+						<p:menuitem value="Online/Offline Master"  url="#" />
+						<p:separator />						
+						<p:submenu label="Test Rates" >
+							<p:submenu label="Text">
+								<p:menuitem value="Workspace" url="#" />
+							</p:submenu>
+							<p:menuitem value="File" url="#" />
+						</p:submenu>
+					</p:submenu>
+
+					<p:submenu label="Operations" rendered="#{not empty username}">
+						<p:menuitem value="Tests Requisition" icon="ui-icon-pencil" url="#"/>
+						<p:separator />
+						<p:menuitem value="Test Rates" icon="ui-icon-pencil" url="#"/>
+						<p:separator />
+						<p:menuitem value="Sample Collection/Tracking" icon="ui-icon-close" url="#" />
+					</p:submenu>
+
+					<p:submenu label="OutSourcing" icon="ui-icon-pencil" rendered="#{not empty username}">
+						<p:menuitem value="Create" icon="ui-icon-pencil" url="#"/>
+						<p:separator />
+						<p:menuitem value="Update" icon="ui-icon-pencil" url="#"/>
+						<p:separator />
+						<p:menuitem value="Delete" icon="ui-icon-close" url="#" />
+					</p:submenu>
+
+					<p:submenu label="Help" icon="ui-icon-help" rendered="#{not empty username}">
+						<p:menuitem value="Contents" url="#" />
+						<p:submenu label="Search" icon="ui-icon-search">
+							<p:submenu label="Text">
+								<p:menuitem value="Workspace" url="#" />
+							</p:submenu>
+							<p:menuitem value="File" url="#" />
+						</p:submenu>
+					</p:submenu>
+
+					<f:facet name="options">
+						
+						<p:inputText style="margin-right:10px" placeholder="Search" />
+						<!-- <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" /> -->
+						
+						<p:commandButton rendered="#{not empty username}" action="#{loginBean.logout}"  value="Logout" icon="ui-icon-extlink" />
+						
+						<p:commandButton rendered="#{empty username}" action="#{loginBean.showLogin}"  icon="ui-icon-key" value="Login" />	
+					</f:facet>
+				</p:menubar>
+			</h:form>
+		</div>
+	</ui:composition>
+
+</body>
+</html>
